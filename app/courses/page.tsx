@@ -1,13 +1,15 @@
-import Link from "next/link"
-import { Filter, Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import type { Metadata } from "next"
+import Link from "next/link";
+import { Filter, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Courses | Karpom.Dev - Python & AI Education",
   description:
     "Browse our comprehensive selection of Python programming and generative AI courses designed to take you from beginner to professional.",
-  keywords: "Python courses, AI education, programming classes, tech education, coding bootcamp, online courses",
+  keywords:
+    "Python courses, AI education, programming classes, tech education, coding bootcamp, online courses",
   openGraph: {
     title: "Courses | Karpom.Dev - Python & AI Education",
     description:
@@ -25,12 +27,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-}
+};
 
 const courses = [
   {
     title: "Python Fundamentals",
-    description: "Master the basics of Python programming language, data structures, and algorithms.",
+    description:
+      "Master the basics of Python programming language, data structures, and algorithms.",
     image: "/placeholder.svg?height=300&width=400&text=Python+Fundamentals",
     level: "Beginner",
     duration: "8 weeks",
@@ -43,7 +46,8 @@ const courses = [
   },
   {
     title: "Generative AI Foundations",
-    description: "Learn the principles behind generative AI models and how to implement them.",
+    description:
+      "Learn the principles behind generative AI models and how to implement them.",
     image: "/placeholder.svg?height=300&width=400&text=AI+Foundations",
     level: "Intermediate",
     duration: "10 weeks",
@@ -56,7 +60,8 @@ const courses = [
   },
   {
     title: "Advanced AI Applications",
-    description: "Build sophisticated AI applications using Python and modern frameworks.",
+    description:
+      "Build sophisticated AI applications using Python and modern frameworks.",
     image: "/placeholder.svg?height=300&width=400&text=Advanced+AI",
     level: "Advanced",
     duration: "12 weeks",
@@ -69,7 +74,8 @@ const courses = [
   },
   {
     title: "Data Science with Python",
-    description: "Learn how to analyze and visualize data using Python's powerful libraries.",
+    description:
+      "Learn how to analyze and visualize data using Python's powerful libraries.",
     image: "/placeholder.svg?height=300&width=400&text=Data+Science",
     level: "Intermediate",
     duration: "10 weeks",
@@ -82,7 +88,8 @@ const courses = [
   },
   {
     title: "Machine Learning Basics",
-    description: "Understand the fundamentals of machine learning algorithms and their applications.",
+    description:
+      "Understand the fundamentals of machine learning algorithms and their applications.",
     image: "/placeholder.svg?height=300&width=400&text=ML+Basics",
     level: "Intermediate",
     duration: "8 weeks",
@@ -95,7 +102,8 @@ const courses = [
   },
   {
     title: "Python for Web Development",
-    description: "Build dynamic web applications using Python frameworks like Django and Flask.",
+    description:
+      "Build dynamic web applications using Python frameworks like Django and Flask.",
     image: "/placeholder.svg?height=300&width=400&text=Python+Web+Dev",
     level: "Intermediate",
     duration: "10 weeks",
@@ -108,7 +116,8 @@ const courses = [
   },
   {
     title: "Natural Language Processing",
-    description: "Learn how to process and analyze human language using AI techniques.",
+    description:
+      "Learn how to process and analyze human language using AI techniques.",
     image: "/placeholder.svg?height=300&width=400&text=NLP",
     level: "Advanced",
     duration: "10 weeks",
@@ -121,7 +130,8 @@ const courses = [
   },
   {
     title: "Computer Vision with Python",
-    description: "Explore image and video processing techniques using Python and OpenCV.",
+    description:
+      "Explore image and video processing techniques using Python and OpenCV.",
     image: "/placeholder.svg?height=300&width=400&text=Computer+Vision",
     level: "Advanced",
     duration: "12 weeks",
@@ -132,11 +142,11 @@ const courses = [
     slug: "computer-vision-python",
     featured: false,
   },
-]
+];
 
 export default function CoursesPage() {
-  const featuredCourses = courses.filter((course) => course.featured)
-  const allCourses = courses.filter((course) => !course.featured)
+  const featuredCourses = courses.filter((course) => course.featured);
+  const allCourses = courses.filter((course) => !course.featured);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -144,9 +154,12 @@ export default function CoursesPage() {
       <header className="bg-yellow-500 py-20">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">Our Courses</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
+              Our Courses
+            </h1>
             <p className="text-xl text-black/80">
-              Comprehensive curriculum designed to take you from beginner to professional
+              Comprehensive curriculum designed to take you from beginner to
+              professional
             </p>
           </div>
         </div>
@@ -195,11 +208,16 @@ export default function CoursesPage() {
           <h2 className="text-3xl font-bold mb-8">Featured Courses</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredCourses.map((course, index) => (
-              <Link href={`/courses/${course.slug}`} key={index} className="group">
+              <Link
+                href={`/courses/${course.slug}`}
+                key={index}
+                className="group"
+              >
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-all group-hover:shadow-xl group-hover:-translate-y-1 border border-gray-100 h-full">
                   <div className="flex flex-col md:flex-row">
                     <div className="md:w-2/5">
-                      <img
+                      <Image
+                        fill
                         src={course.image || "/placeholder.svg"}
                         alt={course.title}
                         className="w-full h-full object-cover"
@@ -210,7 +228,9 @@ export default function CoursesPage() {
                         <span className="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full">
                           {course.category}
                         </span>
-                        <span className="bg-black text-white text-xs px-3 py-1 rounded-full">Featured</span>
+                        <span className="bg-black text-white text-xs px-3 py-1 rounded-full">
+                          Featured
+                        </span>
                       </div>
                       <h3 className="text-xl font-bold mb-2 group-hover:text-yellow-500 transition-colors">
                         {course.title}
@@ -222,7 +242,9 @@ export default function CoursesPage() {
                           <span>•</span>
                           <span className="mx-2">{course.duration}</span>
                         </div>
-                        <div className="text-yellow-500 font-bold">{course.price}</div>
+                        <div className="text-yellow-500 font-bold">
+                          {course.price}
+                        </div>
                       </div>
                       <div className="flex justify-between items-center">
                         <div className="flex items-center">
@@ -230,7 +252,11 @@ export default function CoursesPage() {
                             {[1, 2, 3, 4, 5].map((star) => (
                               <svg
                                 key={star}
-                                className={`w-4 h-4 ${star <= Math.floor(course.rating) ? "text-yellow-500" : "text-gray-300"}`}
+                                className={`w-4 h-4 ${
+                                  star <= Math.floor(course.rating)
+                                    ? "text-yellow-500"
+                                    : "text-gray-300"
+                                }`}
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
                               >
@@ -238,9 +264,13 @@ export default function CoursesPage() {
                               </svg>
                             ))}
                           </div>
-                          <span className="text-sm text-gray-500 ml-1">{course.rating}</span>
+                          <span className="text-sm text-gray-500 ml-1">
+                            {course.rating}
+                          </span>
                         </div>
-                        <span className="text-sm text-gray-500">{course.students} students</span>
+                        <span className="text-sm text-gray-500">
+                          {course.students} students
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -257,10 +287,15 @@ export default function CoursesPage() {
           <h2 className="text-3xl font-bold mb-8">All Courses</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {allCourses.map((course, index) => (
-              <Link href={`/courses/${course.slug}`} key={index} className="group">
+              <Link
+                href={`/courses/${course.slug}`}
+                key={index}
+                className="group"
+              >
                 <div className="bg-white rounded-xl overflow-hidden shadow-md transition-all group-hover:shadow-xl group-hover:-translate-y-1 border border-gray-100 h-full">
                   <div className="relative">
-                    <img
+                    <Image
+                      fill
                       src={course.image || "/placeholder.svg"}
                       alt={course.title}
                       className="w-full h-48 object-cover"
@@ -290,7 +325,11 @@ export default function CoursesPage() {
                           {[1, 2, 3, 4, 5].map((star) => (
                             <svg
                               key={star}
-                              className={`w-4 h-4 ${star <= Math.floor(course.rating) ? "text-yellow-500" : "text-gray-300"}`}
+                              className={`w-4 h-4 ${
+                                star <= Math.floor(course.rating)
+                                  ? "text-yellow-500"
+                                  : "text-gray-300"
+                              }`}
                               fill="currentColor"
                               viewBox="0 0 20 20"
                             >
@@ -298,9 +337,13 @@ export default function CoursesPage() {
                             </svg>
                           ))}
                         </div>
-                        <span className="text-sm text-gray-500 ml-1">{course.rating}</span>
+                        <span className="text-sm text-gray-500 ml-1">
+                          {course.rating}
+                        </span>
                       </div>
-                      <span className="text-sm text-gray-500">{course.students} students</span>
+                      <span className="text-sm text-gray-500">
+                        {course.students} students
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -314,17 +357,22 @@ export default function CoursesPage() {
       <section className="py-16 bg-yellow-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Not Sure Which Course to Choose?</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Not Sure Which Course to Choose?
+            </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Schedule a free consultation with our education advisors to find the perfect course for your goals and
-              skill level.
+              Schedule a free consultation with our education advisors to find
+              the perfect course for your goals and skill level.
             </p>
-            <Button className="bg-yellow-500 hover:bg-yellow-600 text-black text-lg px-8 py-6" asChild>
+            <Button
+              className="bg-yellow-500 hover:bg-yellow-600 text-black text-lg px-8 py-6"
+              asChild
+            >
               <Link href="/contact">Schedule Consultation</Link>
             </Button>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }

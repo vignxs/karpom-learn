@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react"
+import Image from "next/image"
 
 interface TestimonialCardProps {
   quote: string
@@ -16,7 +17,8 @@ export default function TestimonialCard({ quote, name, title, avatar }: Testimon
       <p className="text-gray-700 mb-6 italic">{quote}</p>
       <div className="flex items-center">
         <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-          <img src={avatar || "/placeholder.svg"} alt={name} className="w-full h-full object-cover" />
+          <Image
+                  fill src={avatar || "/placeholder.svg"} alt={name} className="w-full h-full object-cover" />
         </div>
         <div>
           <h4 className="font-bold">{name}</h4>

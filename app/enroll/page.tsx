@@ -7,6 +7,7 @@ import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { ArrowLeft, CreditCard, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 // This would typically come from a database or API
 const getCourseInfo = (slug: string | null) => {
@@ -128,7 +129,8 @@ export default function EnrollPage() {
             <div className="bg-white rounded-xl shadow-md p-8">
               <div className="flex flex-col md:flex-row gap-8 mb-8">
                 <div className="md:w-1/3">
-                  <img
+                  <Image
+                  fill
                     src={courseInfo.image || "/placeholder.svg"}
                     alt={courseInfo.title}
                     className="w-full h-auto rounded-lg"
@@ -389,7 +391,7 @@ export default function EnrollPage() {
               </div>
               <h2 className="text-2xl font-bold mb-4">Enrollment Successful!</h2>
               <p className="text-gray-600 mb-8">
-                Thank you for enrolling in {courseInfo.title}. We've sent a confirmation email to {formData.email} with
+                Thank you for enrolling in {courseInfo.title}. We&apos;ve sent a confirmation email to {formData.email} with
                 all the details.
               </p>
               <div className="space-y-4">

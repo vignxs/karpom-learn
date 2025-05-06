@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Clock, BarChart } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 interface CourseCardProps {
@@ -16,7 +17,8 @@ export default function CourseCard({ title, description, image, level, duration,
   return (
     <div className="bg-white rounded-xl overflow-hidden shadow-md transition-all hover:shadow-xl hover:-translate-y-1 border border-gray-100">
       <div className="relative">
-        <img src={image || "/placeholder.svg"} alt={title} className="w-full h-48 object-cover" />
+        <Image
+                  fill src={image || "/placeholder.svg"} alt={title} className="w-full h-48 object-cover" />
         <div className="absolute top-4 right-4 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full">
           {price}
         </div>
