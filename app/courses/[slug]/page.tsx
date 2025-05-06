@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowLeft, Clock, CheckCircle, Play, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
+import Image from "next/image"
 
 interface CoursePageProps {
   params: {
@@ -274,7 +275,7 @@ export default function CoursePage({ params }: CoursePageProps) {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Course Not Found</h1>
-          <p className="text-gray-600 mb-6">The course you're looking for doesn't exist or has been removed.</p>
+          <p className="text-gray-600 mb-6">The course you&apos;re looking for doesn&apos;t exist or has been removed.</p>
           <Button asChild>
             <Link href="/courses">
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Courses
@@ -337,7 +338,8 @@ export default function CoursePage({ params }: CoursePageProps) {
               </div>
 
               <div className="flex items-center mb-8">
-                <img
+                <Image
+                fill
                   src={course.instructor.image || "/placeholder.svg"}
                   alt={course.instructor.name}
                   className="w-12 h-12 rounded-full mr-4"
@@ -363,7 +365,7 @@ export default function CoursePage({ params }: CoursePageProps) {
             <div className="relative">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-xl blur opacity-30"></div>
               <div className="relative rounded-xl overflow-hidden">
-                <img src={course.image || "/placeholder.svg"} alt={course.title} className="w-full h-auto" />
+                <Image fill src={course.image || "/placeholder.svg"} alt={course.title} className="w-full h-auto" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <button className="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center shadow-lg hover:bg-yellow-600 transition-colors">
                     <Play className="h-8 w-8 text-black" />
@@ -412,9 +414,10 @@ export default function CoursePage({ params }: CoursePageProps) {
               <h2 className="text-3xl font-bold mb-6">Your Instructor</h2>
               <div className="bg-white rounded-xl p-6 border border-gray-200 mb-12">
                 <div className="flex items-center mb-4">
-                  <img
+                  <Image
                     src={course.instructor.image || "/placeholder.svg"}
                     alt={course.instructor.name}
+                    fill
                     className="w-20 h-20 rounded-full mr-6"
                   />
                   <div>
@@ -473,7 +476,8 @@ export default function CoursePage({ params }: CoursePageProps) {
             <Link href="/courses/advanced-ai-applications" className="group">
               <div className="bg-white rounded-xl overflow-hidden shadow-md transition-all group-hover:shadow-xl group-hover:-translate-y-1 border border-gray-100 h-full">
                 <div className="relative">
-                  <img
+                  <Image
+                  fill
                     src="/placeholder.svg?height=300&width=400&text=Advanced+AI"
                     alt="Advanced AI Applications"
                     className="w-full h-48 object-cover"
@@ -495,7 +499,8 @@ export default function CoursePage({ params }: CoursePageProps) {
             <Link href="/courses/data-science-python" className="group">
               <div className="bg-white rounded-xl overflow-hidden shadow-md transition-all group-hover:shadow-xl group-hover:-translate-y-1 border border-gray-100 h-full">
                 <div className="relative">
-                  <img
+                  <Image
+                  fill
                     src="/placeholder.svg?height=300&width=400&text=Data+Science"
                     alt="Data Science with Python"
                     className="w-full h-48 object-cover"
@@ -509,7 +514,7 @@ export default function CoursePage({ params }: CoursePageProps) {
                     Data Science with Python
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Learn how to analyze and visualize data using Python's powerful libraries.
+                    Learn how to analyze and visualize data using Python&apos;s powerful libraries.
                   </p>
                 </div>
               </div>
@@ -517,7 +522,8 @@ export default function CoursePage({ params }: CoursePageProps) {
             <Link href="/courses/machine-learning-basics" className="group">
               <div className="bg-white rounded-xl overflow-hidden shadow-md transition-all group-hover:shadow-xl group-hover:-translate-y-1 border border-gray-100 h-full">
                 <div className="relative">
-                  <img
+                  <Image
+                  fill
                     src="/placeholder.svg?height=300&width=400&text=ML+Basics"
                     alt="Machine Learning Basics"
                     className="w-full h-48 object-cover"

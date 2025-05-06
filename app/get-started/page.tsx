@@ -26,7 +26,7 @@ export default function GetStartedPage() {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold mb-4 text-center">Get Started with Karpom.Dev</h1>
           <p className="text-xl text-gray-600 mb-12 text-center">
-            Choose the path that's right for you and begin your learning journey
+            Choose the path that&apos;s right for you and begin your learning journey
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

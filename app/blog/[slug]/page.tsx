@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowLeft, Calendar, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
+import Image from "next/image"
 
 interface BlogPostPageProps {
   params: {
@@ -254,7 +255,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Blog Post Not Found</h1>
-          <p className="text-gray-600 mb-6">The blog post you're looking for doesn't exist or has been removed.</p>
+          <p className="text-gray-600 mb-6">The blog post you&apos;re looking for doesn&apos;t exist or has been removed.</p>
           <Button asChild>
             <Link href="/blog">
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
@@ -280,7 +281,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Featured Image */}
       <div className="w-full h-[400px] bg-gray-200 relative">
-        <img src={post.image || "/placeholder.svg"} alt={post.title} className="w-full h-full object-cover" />
+        <Image src={post.image || "/placeholder.svg"} fill alt={post.title} className="w-full h-full object-cover" />
       </div>
 
       {/* Article Content */}
@@ -297,9 +298,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="flex items-center justify-between border-y border-gray-200 py-4">
               <div className="flex items-center">
                 <div className="w-10 h-10 rounded-full overflow-hidden mr-3">
-                  <img
+                  <Image
                     src={post.authorImage || "/placeholder.svg"}
                     alt={post.author}
+                    fill
                     className="w-full h-full object-cover"
                   />
                 </div>

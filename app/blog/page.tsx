@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { Metadata } from "next"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "Blog | Karpom.Dev - Python & AI Education",
@@ -135,7 +136,7 @@ export default function BlogPage() {
               <Link href={`/blog/${post.slug}`} key={index} className="group">
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-all group-hover:shadow-xl group-hover:-translate-y-1 border border-gray-100 h-full">
                   <div className="relative">
-                    <img src={post.image || "/placeholder.svg"} alt={post.title} className="w-full h-64 object-cover" />
+                    <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="w-full h-64 object-cover" />
                     <div className="absolute top-4 left-4 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full">
                       {post.category}
                     </div>
@@ -192,7 +193,7 @@ export default function BlogPage() {
               <Link href={`/blog/${post.slug}`} key={index} className="group">
                 <div className="bg-white rounded-xl overflow-hidden shadow-md transition-all group-hover:shadow-xl group-hover:-translate-y-1 border border-gray-100 h-full">
                   <div className="relative">
-                    <img src={post.image || "/placeholder.svg"} alt={post.title} className="w-full h-48 object-cover" />
+                    <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="w-full h-48 object-cover" />
                     <div className="absolute top-4 left-4 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full">
                       {post.category}
                     </div>
